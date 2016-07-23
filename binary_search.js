@@ -1,6 +1,7 @@
 'use strict'
+const _ = require('lodash')
 
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const array = _.range(150)
 
 let binarySearch = (array, item) => {
   let low = 0
@@ -21,5 +22,5 @@ let binarySearch = (array, item) => {
 }
 
 console.log(binarySearch(array, 3));
-console.log(binarySearch(array, 10));
+console.log(binarySearch(array, 100));
 console.log(binarySearch(array, -1));
