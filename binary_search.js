@@ -21,6 +21,26 @@ let binarySearch = (array, item) => {
   return null
 }
 
+let recursiveBinarySearch = (array, item) => {
+  let mid = Math.ceil((array.length - 1) / 2)
+
+  while (array.length > 2) {
+    if (array[mid] === item) { return array[mid] }
+
+    let upperRange = array.slice(mid, array.length)
+    if (array[mid] < item) { return recursiveBinarySearch(upperRange, item) }
+
+    let lowerRange = array.slice(0, mid)
+    if (array[mid] > item) { return recursiveBinarySearch(lowerRange, item) }
+  }
+
+  if (array[mid] === item) { return array[mid] } else { return null }
+}
+
 console.log(binarySearch(array, 3));
 console.log(binarySearch(array, 100));
 console.log(binarySearch(array, -1));
+
+console.log(recursiveBinarySearch(array, 3));
+console.log(recursiveBinarySearch(array, 100));
+console.log(recursiveBinarySearch(array, -1));
