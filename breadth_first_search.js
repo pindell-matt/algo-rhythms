@@ -33,13 +33,12 @@ class Graph {
 
 let graph = new Graph
 graph.add("you", ["alice", "bob", "claire"])
-graph.add('you', ["alice", "bob", "claire"])
 graph.add("bob", ["anuj", "peggy"])
 graph.add("alice", ["peggy"])
-graph.add("claire", ["tom", "jonny"])
+graph.add("claire", ["tom", "johnny"])
 graph.add("anuj", [])
 graph.add("peggy", [])
 graph.add("tom", [])
-graph.add("jonny", [])
+graph.add("johnny", [])
 
 graph.search("you")
