@@ -9,7 +9,7 @@ class Graph {
   add(key, value) {
     this.content.set(key, value)
   }
-  
+
   search(name) {
     let search_queue = this.content.get(name),
         searched = []
@@ -38,10 +38,9 @@ let graph = new Graph
 graph.add("you", ["alice", "bob", "claire"])
 graph.add("bob", ["anuj", "peggy"])
 graph.add("alice", ["peggy"])
-graph.add("claire", ["tom", "johnny"])
+graph.add("claire", ["tom"])
 graph.add("anuj", [])
 graph.add("peggy", [])
 graph.add("tom", [])
-graph.add("johnny", [])
 
 graph.search("you")
