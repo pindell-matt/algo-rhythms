@@ -8,12 +8,11 @@ let quickSort = (array) => {
     let pivot = array[0],
         lessThan = _.filter(array, (num) => { return num < pivot }),
         greaterThan = _.filter(array, (num) => { return num > pivot })
-
     return _.concat(quickSort(lessThan), pivot, quickSort(greaterThan))
   }
 }
 
-let arr = [1, 2, 3, 4, 5]
-let random = _.shuffle(arr)
+let array = _.range(50)
+let random = _.shuffle(array)
 let sorted = quickSort(random)
-console.log(_.isEqual(arr, sorted))
+console.log(_.isEqual(array, sorted))

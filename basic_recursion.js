@@ -12,5 +12,5 @@ let length = (array) => {
 }
 
 let arr = [1, 2, 3, 4, 5]
-console.log(sum(arr));
-console.log(length(arr));
+console.log("The sum is:", sum(arr));
+console.log("The length is:", length(arr));
