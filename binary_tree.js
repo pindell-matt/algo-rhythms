@@ -9,7 +9,7 @@ class BinaryTree {
   leftBranch() {
     this.left = this.left || new BinaryTree
   }
-  
+
   rightBranch() {
     this.right = this.right || new BinaryTree
   }
@@ -25,14 +25,28 @@ class BinaryTree {
       this.right.insert(data)
     }
   }
+
+  include(data) {
+    if (this.data === data) {
+      return true
+    } else if (this.data > data) {
+      return this.left.include(data)
+    } else if (this.data < data) {
+      return this.right.include(data)
+    } else {
+      return false
+    }
+  }
 }
 
 const tree = new BinaryTree
 tree.insert(8)
-console.log("First:", tree)
+// console.log("First:", tree)
 tree.insert(4)
-console.log("Second:", tree)
+// console.log("Second:", tree)
 tree.insert(12)
-console.log("Third:", tree)
+// console.log("Third:", tree)
 tree.insert(6)
-console.log("Fourth:", tree)
+// console.log("Fourth:", tree)
+console.log("Has 4?", tree.include(4));
+console.log("Has 12?", tree.include(12));
