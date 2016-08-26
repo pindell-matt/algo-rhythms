@@ -27,14 +27,14 @@ class BinaryTree {
   }
 
   include(data) {
-    if (this.data === data) {
+    if (this.data === null) {
+      return false
+    } else if (this.data === data) {
       return true
     } else if (this.data > data) {
       return this.left.include(data)
-    } else if (this.data < data) {
-      return this.right.include(data)
     } else {
-      return false
+      return this.right.include(data)
     }
   }
 }
@@ -49,4 +49,3 @@ tree.insert(12)
 tree.insert(6)
 // console.log("Fourth:", tree)
 console.log("Has 4?", tree.include(4));
-console.log("Has 12?", tree.include(12));
