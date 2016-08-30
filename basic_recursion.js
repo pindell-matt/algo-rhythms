@@ -19,4 +19,4 @@ let fibonacci = (n) => {
 let arr = [1, 2, 3, 4, 5]
 console.log("The sum is:", sum(arr))
 console.log("The length is:", length(arr))
-console.log("Given 10, fibonacci returns:", fibonacci(10) )
+console.log("Given 10, fibonacci returns:", fibonacci(10))
