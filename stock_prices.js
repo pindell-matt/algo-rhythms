@@ -1,12 +1,17 @@
 'use strict'
 
+const _ = require('lodash')
+
 let max_profit = (array) => {
   let basePrice = array.shift(),
       profit = array[0] - basePrice
   for (let num of array) {
     let newProfit = num - basePrice
-    profit = Math.max.apply(null, [profit, newProfit])
-    basePrice = Math.min.apply(null, [basePrice, num])
+    profit = _.max([profit, newProfit])
+    basePrice = _.min([basePrice, num])
+    // without lodash:
+    // profit = Math.max.apply(null, [profit, newProfit])
+    // basePrice = Math.min.apply(null, [basePrice, num])
   }
   return profit
 }
