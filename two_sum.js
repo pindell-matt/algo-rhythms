@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 let initialTwoSum = (nums, target) => {
   let base = 0,
@@ -25,7 +25,7 @@ let refinedTwoSum = (nums, target) => {
   }
 };
 
-let nums = [2,1,9,4,4,56,90,3],
+let nums = [2, 1, 9, 4, 4, 56, 90, 3],
     target = 8,
     expected = [3, 4];
 
