@@ -41,4 +41,5 @@ function highestProductOf3(array) {
 }
 
 let result = highestProductOf3(arrayOfInts);
-console.log(result, '=', answer, '?', result === answer)
+let correct = JSON.stringify(answer) === JSON.stringify(result)
+console.log("correct? ", correct)
