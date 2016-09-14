@@ -1,23 +1,20 @@
-'use strict'
+'use strict';
 
-const _ = require('lodash')
-
-let max_profit = (array) => {
-  let basePrice = array.shift(),
-      profit = array[0] - basePrice
-  for (let num of array) {
-    let newProfit = num - basePrice
-    profit = _.max([profit, newProfit])
-    basePrice = _.min([basePrice, num])
-    // without lodash:
-    // profit = Math.max.apply(null, [profit, newProfit])
-    // basePrice = Math.min.apply(null, [basePrice, num])
-  }
-  return profit
+function getMaxProfit(array) {
+  let base = array.shift();
+  let currentProfit = array[0] - base;
+  for (let price of array) {
+      let newProfit = price - base;
+      currentProfit = Math.max(...[currentProfit, newProfit]);
+      base = Math.min(...[base, price]);
+    }
+  return currentProfit;
 }
 
-let stock_prices_yesterday = [10, 7, 5, 8, 11, 9],
-    decreasing_stock_prices = [11, 10, 9, 8, 6, 5]
+let stockPricesYesterday = [10, 7, 5, 8, 11, 9];
+let answer = 6;
+let result = getMaxProfit(stockPricesYesterday);
+let correct = answer === result;
 
-console.log("Max profit:", max_profit(stock_prices_yesterday))
-console.log("Max profit when decreasing:", max_profit(decreasing_stock_prices))
+console.log('correct? ', correct);
+console.log(result);
