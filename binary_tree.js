@@ -1,7 +1,5 @@
 'use strict';
 
-const _ = require('lodash');
-
 class BinaryTree {
   constructor(data) {
     this.data = data || null;
@@ -42,7 +40,7 @@ class BinaryTree {
   all(allNodeData = []) {
     if (this.data) allNodeData.push(this.data);
     if (this.left) this.left.all(allNodeData);
-    if (this.right) this.right.all(allNodeData)
+    if (this.right) this.right.all(allNodeData);
     return allNodeData;
   }
 
@@ -51,14 +49,14 @@ class BinaryTree {
   }
 }
 
-const tree = new BinaryTree
-tree.insert(8)
-tree.insert(4)
-tree.insert(12)
-tree.insert(6)
+const tree = new BinaryTree;
+tree.insert(8);
+tree.insert(4);
+tree.insert(12);
+tree.insert(6);
 console.log(tree.all());
 console.log(`Tree Contains ${tree.count()} element(s)`);
-console.log("Has 4?", tree.include(4))
-console.log("Has 5?", tree.include(5))
-console.log("Has 12?", tree.include(12))
-console.log("Has 13?", tree.include(15))
+console.log("Has 4?", tree.include(4));
+console.log("Has 5?", tree.include(5));
+console.log("Has 12?", tree.include(12));
+console.log("Has 13?", tree.include(15));
