@@ -6,12 +6,12 @@
   Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.
 */
 
-let addDigits = (num) => {
+function addDigits(num) {
   return (1 + (num - 1) % 9);
 };
 
-let num = 38,
-    result = addDigits(num),
-    expected = 2;
+const num = 38;
+const answer = 2;
+let result = addDigits(num);
 
-console.log(result === expected);
+console.log(`${result} === ${answer} ?`, result === answer);
