@@ -45,6 +45,10 @@ class BinaryTree {
     if (this.right) this.right.all(allNodeData)
     return allNodeData;
   }
+
+  count() {
+    return this.all().length;
+  }
 }
 
 const tree = new BinaryTree
@@ -53,6 +57,7 @@ tree.insert(4)
 tree.insert(12)
 tree.insert(6)
 console.log(tree.all());
+console.log(`Tree Contains ${tree.count()} element(s)`);
 console.log("Has 4?", tree.include(4))
 console.log("Has 5?", tree.include(5))
 console.log("Has 12?", tree.include(12))
