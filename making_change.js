@@ -8,7 +8,7 @@ class Change {
   calcPossibilities(amount, denominations, index) {
     index = index || 0;
 
-    let memoKey = { amountLeft: amount, currentIndex: index }
+    let memoKey = { amountLeft: amount, currentIndex: index };
     if (this.memo.has(memoKey)) return this.memo.get(memoKey);
 
     if (amount === 0) return 1;
